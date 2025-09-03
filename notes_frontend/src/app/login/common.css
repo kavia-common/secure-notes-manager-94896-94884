@@ -1,0 +1,199 @@
+:root {
+  /* Color tokens from design system */
+  --color-ffffff: #ffffff;
+  --color-000000: #000000;
+  --color-121212: #121212;
+  --color-484848: #484848;
+  --color-797979: #797979;
+  --color-a9a9a9: #a9a9a9;
+  --color-d9d9d9: #d9d9d9;
+  --color-129575: #129575;
+  --color-ff9c00: #ff9c00;
+  --color-ffc107: #ffc107;
+  --color-ff3d00: #ff3d00;
+  --color-4caf50: #4caf50;
+  --color-1976d2: #1976d2;
+  --color-303030: #303030;
+
+  /* Typography tokens (common subset used on this screen) */
+  --font-poppins: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-open-sans: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --typo-60-size: 30px;
+  --typo-60-weight: 600;
+  --typo-60-line-height: 45px;
+  --typo-61-size: 20px;
+  --typo-61-weight: 400;
+  --typo-61-line-height: 30px;
+  --typo-62-size: 11px;
+  --typo-62-weight: 400;
+  --typo-62-line-height: 16.5px;
+  --typo-63-size: 11px;
+  --typo-63-weight: 500;
+  --typo-63-line-height: 16.5px;
+  --typo-64-size: 11px;
+  --typo-64-weight: 500;
+  --typo-64-line-height: 16.5px;
+  --typo-65-size: 11px;
+  --typo-65-weight: 400;
+  --typo-65-line-height: 16.5px;
+  --typo-66-size: 14px;
+  --typo-66-weight: 400;
+  --typo-66-line-height: 21px;
+  --typo-58-size: 16px;
+  --typo-58-weight: 600;
+  --typo-58-line-height: 24px;
+  --typo-67-size: 15px;
+  --typo-67-weight: 500;
+  --typo-67-line-height: 17.9px;
+
+  /* Radii */
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-100: 100px;
+
+  /* Shadows (subset) */
+  --shadow-elev-1: 0 8px 25px rgba(32,32,32,1);
+  --shadow-soft: 0 0 8px rgba(108,108,108,1);
+
+  /* Spacing scale (selected values) */
+  --space-0: 0;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-20: 20px;
+  --space-22: 22px;
+  --space-24: 24px;
+  --space-30: 30px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-44: 44px;
+  --space-55: 55px;
+  --space-60: 60px;
+
+  /* Container size (screen frame) */
+  --screen-width: 375px;
+  --screen-height: 812px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-ffffff);
+  color: var(--color-121212);
+  font-family: var(--font-poppins);
+}
+
+.screen-frame {
+  width: var(--screen-width);
+  height: var(--screen-height);
+  margin: 0 auto;
+  background: var(--color-ffffff);
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px; /* style_10 */
+  box-shadow: var(--shadow-soft);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+}
+
+/* Base input style aligned to style_30 (border, radius) */
+.input-field {
+  width: 315px;
+  height: 55px;
+  border: 1.5px solid var(--color-d9d9d9);
+  border-radius: var(--radius-10);
+  background: transparent;
+  padding: 0 var(--space-16);
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color-121212);
+}
+
+.input-label {
+  display: block;
+  font-size: var(--typo-66-size);
+  font-weight: var(--typo-66-weight);
+  line-height: var(--typo-66-line-height);
+  color: var(--color-121212);
+  margin-bottom: var(--space-6);
+}
+
+.input-field::placeholder {
+  color: var(--color-d9d9d9);
+  font-size: var(--typo-65-size);
+  font-weight: var(--typo-65-weight);
+  line-height: var(--typo-65-line-height);
+}
+
+/* Primary big button (style_11 background, typo_58 text) */
+.btn-primary {
+  width: 315px;
+  height: 60px;
+  border: none;
+  border-radius: var(--radius-10);
+  background: var(--color-129575);
+  color: var(--color-ffffff);
+  font-size: var(--typo-58-size);
+  font-weight: var(--typo-58-weight);
+  line-height: var(--typo-58-line-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-10);
+  cursor: pointer;
+}
+
+.btn-social {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-10);
+  background: var(--color-ffffff);
+  box-shadow: 0 0 5px 0 #696969, 0 8px 25px 0 #20202033; /* mix of style_126 shadows */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* Status bar and home indicator placeholders */
+.status-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--screen-width);
+  height: 44px;
+}
+
+.home-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: var(--screen-width);
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-indicator .pill {
+  width: 135px;
+  height: 5px;
+  background: var(--color-121212);
+  border-radius: var(--radius-100);
+  opacity: 1;
+}
